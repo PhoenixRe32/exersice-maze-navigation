@@ -53,7 +53,6 @@ class ExplorerTest {
     private static Stream<Arguments> happyPathCombinationsForMovingForward() {
         Coordinates coordinates = new Coordinates(1, 1);
         return Stream.of(
-                Arguments.of(new Position(coordinates, NORTH), new Position(new Coordinates(1, 0), NORTH)),
                 Arguments.of(new Position(coordinates, SOUTH), new Position(new Coordinates(1, 2), SOUTH)),
                 Arguments.of(new Position(coordinates, EAST), new Position(new Coordinates(2, 1), EAST)),
                 Arguments.of(new Position(coordinates, WEST), new Position(new Coordinates(0, 1), WEST))
@@ -70,6 +69,15 @@ class ExplorerTest {
         assertEquals(expectedPosition, explorer.getCurrentPosition());
         assertEquals(2, explorer.getTrail().size());
         assertEquals(expectedPosition, explorer.getTrail().get(1));
+    }
+
+    @Test
+    void shouldNotMoveExplorerWhenThereIsAWallAhead() throws InvalidDirection {
+        Position startingPosition = explorer.getCurrentPosition();
+        explorer.moveForward();
+
+        assertEquals(startingPosition, explorer.getCurrentPosition());
+        assertEquals(1, explorer.getTrail().size());
     }
 
     private static Stream<Arguments> combinationsOfInitialPositionAndExpectedPositionAfterTurningRight() {

@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.toList;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isEntrance;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isExit;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isSpace;
+import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isWall;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.NORTH;
 
 import java.util.LinkedList;
@@ -30,6 +31,11 @@ public class Explorer {
     }
 
     public void moveForward() throws InvalidDirection {
+        if (isWall.test(peekAhead())){
+            System.out.println("There is a wall ahead. Can't move.");
+            return;
+        }
+
         this.currentPosition = new Position(
                 currentPosition.getCoordinates().move(currentPosition.getDirection()),
                 currentPosition.getDirection());
