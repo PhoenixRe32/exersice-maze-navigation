@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bc0d71a-ab11-4222-9fe7-4b3aa45e65ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="67" column="68" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
+            <state relative-caret-position="279">
+              <caret line="117" column="76" selection-start-line="117" selection-start-column="76" selection-end-line="117" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -539,7 +536,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21306472" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -548,7 +544,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32894737" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991228" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -557,7 +553,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4993895" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.32894737" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4993895" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.4993895" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32894737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -587,7 +583,8 @@
     <MESSAGE value="[Andreas] Stop explorer from moving when trying to go over the edge" />
     <MESSAGE value="[Andreas] Sets up quick terminal interface to interact with solution" />
     <MESSAGE value="[Andreas] Configures maven to run junit 5 tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Andreas] Configures maven to run junit 5 tests" />
+    <MESSAGE value="[Andreas] Made a quick terminal interface so I can interact with it" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Andreas] Made a quick terminal interface so I can interact with it" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -597,12 +594,6 @@
           <line>40</line>
           <properties />
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java</url>
-          <line>72</line>
-          <properties />
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1227,8 +1218,8 @@ Files.list(mazes);</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="67" column="68" selection-start-line="67" selection-start-column="68" selection-end-line="67" selection-end-column="68" />
+        <state relative-caret-position="279">
+          <caret line="117" column="76" selection-start-line="117" selection-start-column="76" selection-end-line="117" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
