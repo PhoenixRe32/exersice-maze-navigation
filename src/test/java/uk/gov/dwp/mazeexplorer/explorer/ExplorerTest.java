@@ -80,6 +80,16 @@ class ExplorerTest {
         assertEquals(1, explorer.getTrail().size());
     }
 
+    @Test
+    void shouldNotMoveExplorerWhenTryingToGoOverTheEdge() throws InvalidDirection {
+        Position startingPosition = explorer.getCurrentPosition();
+        explorer.turnLeft();
+        explorer.moveForward();
+
+        assertEquals(new Position(startingPosition.getCoordinates(), WEST), explorer.getCurrentPosition());
+        assertEquals(1, explorer.getTrail().size());
+    }
+
     private static Stream<Arguments> combinationsOfInitialPositionAndExpectedPositionAfterTurningRight() {
         Coordinates coordinates = new Coordinates(1, 1);
         return Stream.of(

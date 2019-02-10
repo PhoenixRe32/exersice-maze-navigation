@@ -31,10 +31,18 @@ public class Explorer {
     }
 
     public void moveForward() throws InvalidDirection {
-        if (isWall.test(peekAhead())){
+        MazeBlock whatIsAhead = peekAhead();
+
+        if (whatIsAhead == null) {
+            System.out.println("Trying to go over the edge of the map.");
+            return;
+        }
+
+        if (isWall.test(whatIsAhead)){
             System.out.println("There is a wall ahead. Can't move.");
             return;
         }
+
 
         this.currentPosition = new Position(
                 currentPosition.getCoordinates().move(currentPosition.getDirection()),
@@ -60,8 +68,8 @@ public class Explorer {
     }
 
     /***
-     * Always performs a search clockwise starting from the North direction and returns a list of
-     * coordinates where the maze has free spaces (not walls).
+     * Performs a search clockwise starting from the North direction and returns a list of
+     * coordinates where the maze has free spaces (not walls or nulls - edges).
      * @return list of coordinates
      */
     public List<Coordinates> findFreeSpacesInTheSurroundingAreaToMoveTo() {

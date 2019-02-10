@@ -26,6 +26,9 @@ further information and for the purposes of this exercise it will do.
 * The coordinate system is an (x,y) system extending to the bottom. 
   The upper left corner is (0,0) and `x` grows positive to the right and
   `y` grows positive to the bottom.
+  
+* For the edges of the map I don't do anything, if trying to see what is
+  there it will return a null and I don't act on it.
 
 * As one reads the file with the map, up is `NORTH`, down is `SOUTH`, left is
   `WEST` and right is `EAST`
