@@ -2,15 +2,21 @@ package uk.gov.dwp.mazeexplorer.explorer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static uk.gov.dwp.mazeexplorer.maze.Maze.createFromFile;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.EXIT;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.EAST;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.NORTH;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.SOUTH;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.WEST;
 
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +24,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import org.mockito.Mockito;
 import uk.gov.dwp.mazeexplorer.maze.Maze;
 import uk.gov.dwp.mazeexplorer.maze.MazeBlock;
 import uk.gov.dwp.mazeexplorer.physics.Coordinates;
@@ -26,6 +31,8 @@ import uk.gov.dwp.mazeexplorer.physics.Position;
 import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
 
 class ExplorerTest {
+
+    private static final String SOME_VALID_MAZE = "mazes/testMazeForCheckingArea";
 
     private final Maze maze = mock(Maze.class);
 
@@ -106,5 +113,26 @@ class ExplorerTest {
 
         verify(maze).peekAt(eq(coordinatesAhead));
         assertEquals(mazeBlockMockReturned, mazeBlockAhead);
+    }
+
+    @Test
+    void shouldReturnCoordinatesAroundPositionThatAreNotWallsAndWeCanMoveTo() throws URISyntaxException {
+        /* Maze we use, we are at the star
+            XXX
+            S*F
+            X X
+        */
+        URL urlToValidTestMazeFile = Objects.requireNonNull(getClass().getClassLoader().getResource(SOME_VALID_MAZE));
+        Maze maze = createFromFile(Paths.get(urlToValidTestMazeFile.toURI()));
+        Explorer explorer = new Explorer(maze);
+        explorer.setCurrentPosition(new Position(new Coordinates(1, 1), EAST));
+
+        List<Coordinates> freeSpaces = explorer.findFreeSpacesInTheSurroundingAreaToMoveTo();
+
+        List<Coordinates> expectedCoordinates = List.of(
+                new Coordinates(2, 1),
+                new Coordinates(1, 2),
+                new Coordinates(0, 1));
+        assertEquals(expectedCoordinates, freeSpaces);
     }
 }

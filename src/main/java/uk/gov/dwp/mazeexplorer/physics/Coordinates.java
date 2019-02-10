@@ -1,5 +1,6 @@
 package uk.gov.dwp.mazeexplorer.physics;
 
+import java.util.List;
 import java.util.Objects;
 
 import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
@@ -46,6 +47,15 @@ public final class Coordinates {
             default:
                 throw new InvalidDirection("The direction can't be null. It must be specified.");
         }
+    }
+
+
+    public List<Coordinates> getTheCoordinatesOfTheTilesAroundUs() {
+        return List.of(
+                moveNorth(),
+                moveEast(),
+                moveSouth(),
+                moveWest());
     }
 
     @Override

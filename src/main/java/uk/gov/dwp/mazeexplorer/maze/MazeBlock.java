@@ -39,6 +39,7 @@ public enum MazeBlock {
     public static Predicate<MazeBlock> isWall = mazeBlock -> mazeBlock == WALL;
     public static Predicate<MazeBlock> isSpace = mazeBlock -> mazeBlock == SPACE;
     public static Predicate<MazeBlock> isEntrance = mazeBlock -> mazeBlock == ENTRANCE;
+    public static Predicate<MazeBlock> isExit = mazeBlock -> mazeBlock == EXIT;
 
 //    public static boolean isWall(MazeBlock mazeBlock){
 //        return mazeBlock == WALL;
