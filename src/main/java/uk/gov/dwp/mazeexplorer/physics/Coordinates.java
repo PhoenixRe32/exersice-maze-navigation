@@ -2,6 +2,8 @@ package uk.gov.dwp.mazeexplorer.physics;
 
 import java.util.Objects;
 
+import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
+
 public final class Coordinates {
     private final int x;
     private final int y;
@@ -11,16 +13,39 @@ public final class Coordinates {
         this.y = y;
     }
 
-    public Coordinates moveSouth() {
-        return new Coordinates(this.x, this.y + 1);
-    }
-
     public Coordinates resetX() {
         return new Coordinates(0, this.y);
     }
 
+    public Coordinates moveNorth() {
+        return new Coordinates(this.x, this.y - 1);
+    }
+
+    public Coordinates moveSouth() {
+        return new Coordinates(this.x, this.y + 1);
+    }
+
+    public Coordinates moveWest() {
+        return new Coordinates(this.x - 1, this.y);
+    }
+
     public Coordinates moveEast() {
         return new Coordinates(this.x + 1, this.y);
+    }
+
+    public Coordinates move(Direction direction) throws InvalidDirection {
+        switch (direction) {
+            case NORTH:
+                return moveNorth();
+            case EAST:
+                return moveEast();
+            case SOUTH:
+                return moveSouth();
+            case WEST:
+                return moveWest();
+            default:
+                throw new InvalidDirection("The direction can't be null. It must be specified.");
+        }
     }
 
     @Override
