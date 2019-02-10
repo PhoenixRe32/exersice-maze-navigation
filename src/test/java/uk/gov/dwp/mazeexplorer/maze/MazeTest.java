@@ -45,12 +45,12 @@ class MazeTest {
 
         Maze maze = createFromFile(tempTestFilePath);
 
-        assertEquals(ENTRANCE, maze.whatKindOfBlockIsIn(new Coordinates(0, 0)));
-        assertEquals(SPACE, maze.whatKindOfBlockIsIn(new Coordinates(1, 0)));
-        assertEquals(WALL, maze.whatKindOfBlockIsIn(new Coordinates(2, 0)));
-        assertEquals(WALL, maze.whatKindOfBlockIsIn(new Coordinates(0, 1)));
-        assertEquals(SPACE, maze.whatKindOfBlockIsIn(new Coordinates(1, 1)));
-        assertEquals(EXIT, maze.whatKindOfBlockIsIn(new Coordinates(2, 1)));
-        assertNull(maze.whatKindOfBlockIsIn(new Coordinates(4, 4)));
+        assertEquals(ENTRANCE, maze.peekAt(new Coordinates(0, 0)));
+        assertEquals(SPACE, maze.peekAt(new Coordinates(1, 0)));
+        assertEquals(WALL, maze.peekAt(new Coordinates(2, 0)));
+        assertEquals(WALL, maze.peekAt(new Coordinates(0, 1)));
+        assertEquals(SPACE, maze.peekAt(new Coordinates(1, 1)));
+        assertEquals(EXIT, maze.peekAt(new Coordinates(2, 1)));
+        assertNull(maze.peekAt(new Coordinates(4, 4)));
     }
 }

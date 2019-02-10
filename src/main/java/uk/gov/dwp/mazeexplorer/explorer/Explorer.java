@@ -3,6 +3,8 @@ package uk.gov.dwp.mazeexplorer.explorer;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.NORTH;
 
 import uk.gov.dwp.mazeexplorer.maze.Maze;
+import uk.gov.dwp.mazeexplorer.maze.MazeBlock;
+import uk.gov.dwp.mazeexplorer.physics.Coordinates;
 import uk.gov.dwp.mazeexplorer.physics.Position;
 import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
 
@@ -37,6 +39,11 @@ public class Explorer {
 
     public Position getCurrentPosition() {
         return currentPosition;
+    }
+
+    public MazeBlock peekAhead() throws InvalidDirection {
+        Coordinates upAhead = currentPosition.getCoordinates().move(currentPosition.getDirection());
+        return map.peekAt(upAhead);
     }
 
     public void setCurrentPosition(Position currentPosition) {

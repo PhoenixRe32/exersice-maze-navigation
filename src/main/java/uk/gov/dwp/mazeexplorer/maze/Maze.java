@@ -84,7 +84,7 @@ public class Maze {
         return numberOfEmptySpaces;
     }
 
-    public MazeBlock whatKindOfBlockIsIn(Coordinates coordinates) {
+    public MazeBlock peekAt(Coordinates coordinates) {
         return mazeMap.get(coordinates);
     }
 

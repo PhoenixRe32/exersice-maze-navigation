@@ -1,7 +1,11 @@
 package uk.gov.dwp.mazeexplorer.explorer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.EXIT;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.EAST;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.NORTH;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.SOUTH;
@@ -9,10 +13,14 @@ import static uk.gov.dwp.mazeexplorer.physics.Direction.WEST;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.Mockito;
 import uk.gov.dwp.mazeexplorer.maze.Maze;
+import uk.gov.dwp.mazeexplorer.maze.MazeBlock;
 import uk.gov.dwp.mazeexplorer.physics.Coordinates;
 import uk.gov.dwp.mazeexplorer.physics.Position;
 import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
@@ -20,6 +28,13 @@ import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
 class ExplorerTest {
 
     private final Maze maze = mock(Maze.class);
+
+    private Explorer explorer;
+
+    @BeforeEach
+    void setup() {
+        explorer = new Explorer(maze);
+    }
 
     private static Stream<Arguments> happyPathCombinationsForMovingForward() {
         Coordinates coordinates = new Coordinates(1, 1);
@@ -34,7 +49,6 @@ class ExplorerTest {
     @ParameterizedTest
     @MethodSource("happyPathCombinationsForMovingForward")
     void shouldMoveExplorerForwardByOneSpace(Position initialPosition, Position expectedPosition) throws InvalidDirection {
-        Explorer explorer = new Explorer(maze);
         explorer.setCurrentPosition(initialPosition);
 
         explorer.moveForward();
@@ -55,7 +69,6 @@ class ExplorerTest {
     @ParameterizedTest
     @MethodSource("combinationsOfInitialPositionAndExpectedPositionAfterTurningRight")
     void shouldTurnExplorerToFaceNextDirectionToTheRight(Position initialPosition, Position expectedPosition) {
-        Explorer explorer = new Explorer(maze);
         explorer.setCurrentPosition(initialPosition);
 
         explorer.turnRight();
@@ -75,10 +88,23 @@ class ExplorerTest {
     @ParameterizedTest
     @MethodSource("combinationsOfInitialPositionAndExpectedPositionAfterTurningLeft")
     void shouldTurnExplorerToFaceNextDirectionToTheLeft(Position initialPosition, Position expectedPosition) {
-        Explorer explorer = new Explorer(maze);
         explorer.setCurrentPosition(initialPosition);
 
         explorer.turnLeft();
         assertEquals(expectedPosition, explorer.getCurrentPosition());
+    }
+
+    @Test
+    void shouldReportWhatIsInFrontOfTheExplorer() throws InvalidDirection {
+        Position currentPosition = new Position(new Coordinates(1, 1), EAST);
+        Coordinates coordinatesAhead = new Coordinates(2, 1);
+        explorer.setCurrentPosition(currentPosition);
+        MazeBlock mazeBlockMockReturned = EXIT;
+        doReturn(mazeBlockMockReturned).when(maze).peekAt(eq(coordinatesAhead));
+
+        MazeBlock mazeBlockAhead = explorer.peekAhead();
+
+        verify(maze).peekAt(eq(coordinatesAhead));
+        assertEquals(mazeBlockMockReturned, mazeBlockAhead);
     }
 }
