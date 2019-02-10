@@ -6,6 +6,7 @@ import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isExit;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.isSpace;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.NORTH;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import uk.gov.dwp.mazeexplorer.maze.Maze;
@@ -20,15 +21,19 @@ public class Explorer {
 
     private Position currentPosition;
 
+    private final List<Position> trail = new LinkedList<>();
+
     public Explorer(Maze map) {
         this.map = map;
         this.currentPosition = new Position(map.getEntranceCoordinates(), NORTH);
+        trail.add(this.currentPosition);
     }
 
     public void moveForward() throws InvalidDirection {
         this.currentPosition = new Position(
                 currentPosition.getCoordinates().move(currentPosition.getDirection()),
                 currentPosition.getDirection());
+        this.trail.add(this.currentPosition);
     }
 
     public void turnRight() {
@@ -60,11 +65,19 @@ public class Explorer {
                 .collect(toList());
     }
 
-    public void setCurrentPosition(Position currentPosition) {
+    void setCurrentPosition(Position currentPosition) {
         this.currentPosition = currentPosition;
     }
 
     public Position getCurrentPosition() {
         return currentPosition;
+    }
+
+    public List<Position> getTrail() {
+        return trail;
+    }
+
+    public void printTrail() {
+        trail.forEach(System.out::println);
     }
 }

@@ -2,8 +2,6 @@ package uk.gov.dwp.mazeexplorer.physics;
 
 import java.util.Objects;
 
-import uk.gov.dwp.mazeexplorer.explorer.Explorer;
-
 public final class Position {
 
     private Coordinates coordinates;
@@ -11,6 +9,8 @@ public final class Position {
     private Direction direction;
 
     public Position(Coordinates coordinates, Direction direction) {
+        Objects.requireNonNull(coordinates);
+        Objects.requireNonNull(direction);
         this.coordinates = coordinates;
         this.direction = direction;
     }
@@ -43,6 +43,6 @@ public final class Position {
 
     @Override
     public String toString() {
-        return "Position{" + "coordinates=" + coordinates + ", direction=" + direction + '}';
+        return coordinates + " looking " + direction;
     }
 }

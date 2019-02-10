@@ -57,7 +57,7 @@ public class Maze {
                 .stream()
                 .filter(entry -> isEntrance.test(entry.getValue()))
                 .findFirst()
-                .orElseThrow(() -> new InvalidMazeFileException("There is no entrance to the maze (" + this.mazeName +")"))
+                .orElseThrow(() -> new InvalidMazeFileException("There is no entrance to the maze (" + this.mazeName + ")"))
                 .getKey();
     }
 

@@ -2,7 +2,6 @@ package uk.gov.dwp.mazeexplorer.maze;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.dwp.mazeexplorer.maze.Maze.createFromFile;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.ENTRANCE;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.EXIT;
@@ -32,9 +31,9 @@ class MazeTest {
 
         Maze maze = createFromFile(Paths.get(urlToValidTestMazeFile.toURI()));
 
-        assertEquals(7,maze.getNumberOfWalls());
+        assertEquals(7, maze.getNumberOfWalls());
         assertEquals(3, maze.getNumberOfEmptySpaces());
-        assertEquals(new Coordinates(0,1), maze.getEntranceCoordinates());
+        assertEquals(new Coordinates(0, 1), maze.getEntranceCoordinates());
     }
 
     @Test

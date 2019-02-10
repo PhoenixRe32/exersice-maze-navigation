@@ -1,10 +1,6 @@
 package uk.gov.dwp.mazeexplorer.explorer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static uk.gov.dwp.mazeexplorer.maze.Maze.createFromFile;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.EXIT;
 import static uk.gov.dwp.mazeexplorer.physics.Direction.EAST;
@@ -32,15 +28,26 @@ import uk.gov.dwp.mazeexplorer.physics.exceptions.InvalidDirection;
 
 class ExplorerTest {
 
-    private static final String SOME_VALID_MAZE = "mazes/testMazeForCheckingArea";
-
-    private final Maze maze = mock(Maze.class);
+    private static final String TEST_MAZE_FOR_EXPLORER = "mazes/testMazeForCheckingArea";
 
     private Explorer explorer;
 
     @BeforeEach
-    void setup() {
+    void setup() throws URISyntaxException {
+        /* Maze we use
+            XXX
+            S F
+            X X
+        */
+        URL urlToValidTestMazeFile = Objects.requireNonNull(getClass().getClassLoader().getResource(TEST_MAZE_FOR_EXPLORER));
+        Maze maze = createFromFile(Paths.get(urlToValidTestMazeFile.toURI()));
         explorer = new Explorer(maze);
+    }
+
+    @Test
+    void shouldHaveStartingPositionWhenInitialisedInTheExplorersPath() {
+        assertEquals(1, explorer.getTrail().size());
+        assertEquals(new Position(new Coordinates(0, 1), NORTH), explorer.getTrail().get(0));
     }
 
     private static Stream<Arguments> happyPathCombinationsForMovingForward() {
@@ -61,6 +68,8 @@ class ExplorerTest {
         explorer.moveForward();
 
         assertEquals(expectedPosition, explorer.getCurrentPosition());
+        assertEquals(2, explorer.getTrail().size());
+        assertEquals(expectedPosition, explorer.getTrail().get(1));
     }
 
     private static Stream<Arguments> combinationsOfInitialPositionAndExpectedPositionAfterTurningRight() {
@@ -98,33 +107,22 @@ class ExplorerTest {
         explorer.setCurrentPosition(initialPosition);
 
         explorer.turnLeft();
+
         assertEquals(expectedPosition, explorer.getCurrentPosition());
     }
 
     @Test
     void shouldReportWhatIsInFrontOfTheExplorer() throws InvalidDirection {
         Position currentPosition = new Position(new Coordinates(1, 1), EAST);
-        Coordinates coordinatesAhead = new Coordinates(2, 1);
         explorer.setCurrentPosition(currentPosition);
-        MazeBlock mazeBlockMockReturned = EXIT;
-        doReturn(mazeBlockMockReturned).when(maze).peekAt(eq(coordinatesAhead));
 
         MazeBlock mazeBlockAhead = explorer.peekAhead();
 
-        verify(maze).peekAt(eq(coordinatesAhead));
-        assertEquals(mazeBlockMockReturned, mazeBlockAhead);
+        assertEquals(EXIT, mazeBlockAhead);
     }
 
     @Test
-    void shouldReturnCoordinatesAroundPositionThatAreNotWallsAndWeCanMoveTo() throws URISyntaxException {
-        /* Maze we use, we are at the star
-            XXX
-            S*F
-            X X
-        */
-        URL urlToValidTestMazeFile = Objects.requireNonNull(getClass().getClassLoader().getResource(SOME_VALID_MAZE));
-        Maze maze = createFromFile(Paths.get(urlToValidTestMazeFile.toURI()));
-        Explorer explorer = new Explorer(maze);
+    void shouldReturnCoordinatesAroundPositionThatAreNotWallsAndWeCanMoveTo() {
         explorer.setCurrentPosition(new Position(new Coordinates(1, 1), EAST));
 
         List<Coordinates> freeSpaces = explorer.findFreeSpacesInTheSurroundingAreaToMoveTo();

@@ -10,8 +10,8 @@ import java.net.URISyntaxException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import uk.gov.dwp.mazeexplorer.physics.Position;
 import uk.gov.dwp.mazeexplorer.physics.Coordinates;
+import uk.gov.dwp.mazeexplorer.physics.Position;
 
 class MazeExplorerTest {
 

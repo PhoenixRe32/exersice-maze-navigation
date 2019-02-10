@@ -44,7 +44,7 @@ public class MazeExplorer {
         Maze maze = mazes.get(someValidMaze);
         if (maze == null) {
             System.out.println("The maze map doesn't exist. Exiting...");
-            return ;
+            return;
         }
 
         this.explorer = new Explorer(maze);
