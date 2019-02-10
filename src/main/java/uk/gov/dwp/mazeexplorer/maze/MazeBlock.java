@@ -27,7 +27,7 @@ public enum MazeBlock {
         this.representation = representation;
     }
 
-    public static MazeBlock fromCharacter(Character c) {
+    public static MazeBlock fromCharacter(Character c) throws InvalidMazeBlockRepresentation {
         MazeBlock mazeBlock = mappings.get(c);
         if (mazeBlock == null) {
             throw new InvalidMazeBlockRepresentation(c + " is not a valid maze block.");

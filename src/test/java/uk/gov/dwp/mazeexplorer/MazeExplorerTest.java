@@ -1,6 +1,6 @@
 package uk.gov.dwp.mazeexplorer;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -9,14 +9,16 @@ import org.junit.jupiter.api.Test;
 
 class MazeExplorerTest {
 
-    private static final String SOME_VALID_MAZE = "someValidMaze";
-
-    MazeExplorer mazeExplorer = new MazeExplorer();
-
     @Test
     void shouldInitialiseAMazeWhenInitialising() throws IOException, URISyntaxException {
-        mazeExplorer.initialise(SOME_VALID_MAZE);
+        MazeExplorer mazeExplorer = new MazeExplorer();
 
-        assertNotNull(mazeExplorer.getMaze());
+        assertFalse(mazeExplorer.getMazes().isEmpty());
     }
+
+//    void shouldInitialiseAnExplorerWithAMazeWhenInitialising() throws IOException, URISyntaxException {
+//        mazeExplorer.initialise(SOME_VALID_MAZE);
+//
+//        assertNotNull(mazeExplorer.getExplorer());
+//    }
 }

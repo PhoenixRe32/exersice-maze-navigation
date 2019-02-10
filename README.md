@@ -4,7 +4,11 @@ I am using IntelliJ and maven.
 I set language level to Java 9 so you need to run it in Java 9 at least. 
 
 I am only using Java 9 for some helpful methods that will make my life 
-easier but that are easily interchangable with methods from Java 8.
+easier but that are easily interchangable with methods from Java 8 or 
+maybe some external libraries (e.g. Guava).
+
+I am going to be referring to the whole solution as a game since this is
+what I associate it with. Doesn't mean it could be something else.
 
 ### Assumptions
 
@@ -25,6 +29,15 @@ further information and for the purposes of this exercise it will do.
 
 * As one reads the file with the maze, up is `NORTH`, down is `SOUTH`, left is
   `WEST` and right is `EAST`
+ 
+* The maze explorer is the interface for the interaction  (between the 
+  game and user).
+
+* The maze explorer contains all the maps included in the game.
+  
+* The explorer and the maze will have a composition relation;
+  Explorer HAS-A maze, the assumption being that the maze object is 
+  basically a map. 
 
 ### How to run tests and solution
  
