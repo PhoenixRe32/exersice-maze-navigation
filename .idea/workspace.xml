@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bc0d71a-ab11-4222-9fe7-4b3aa45e65ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/Maze.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +22,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MazeTest.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="52">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1454#1455#0" expanded="true" />
+                <element signature="e#1485#1486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-15">
+              <caret line="29" column="86" lean-forward="true" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.sdkman/candidates/java/9.0.4-openjdk/lib/src.zip!/java.base/java/util/Objects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="220" selection-start-line="220" selection-end-line="220" />
             </state>
           </provider>
         </entry>
@@ -67,13 +114,13 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/physics/Coordinates.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/resources/mazes/someMazeTempFile" />
-        <option value="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/exceptions/MazeFileIOException.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/exceptions/InvalidMazeBlockRepresentation.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/MazeBlock.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/exceptions/MazeFileException.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/Maze.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java" />
       </list>
@@ -269,7 +316,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="JUnit.MazeExplorerTest.shouldCreateExplorerWithSpecificMazeMapWhenStartingGame">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="uk.gov.dwp.mazeexplorer.Application" />
       <module name="maze" />
@@ -291,21 +338,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeExplorerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="maze" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uk.gov.dwp.mazeexplorer.physics.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uk.gov.dwp.mazeexplorer" />
-      <option name="MAIN_CLASS_NAME" value="uk.gov.dwp.mazeexplorer.MazeExplorerTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MazeExplorerTest.shouldInitialiseAMazeWhenInitialising" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MazeExplorerTest.shouldCreateExplorerWithSpecificMazeMapWhenStartingGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="maze" />
       <extension name="coverage">
         <pattern>
@@ -315,8 +348,22 @@
       </extension>
       <option name="PACKAGE_NAME" value="uk.gov.dwp.mazeexplorer" />
       <option name="MAIN_CLASS_NAME" value="uk.gov.dwp.mazeexplorer.MazeExplorerTest" />
-      <option name="METHOD_NAME" value="shouldInitialiseAMazeWhenInitialising" />
+      <option name="METHOD_NAME" value="shouldCreateExplorerWithSpecificMazeMapWhenStartingGame" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="maze" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uk.gov.dwp.mazeexplorer.maze.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uk.gov.dwp.mazeexplorer.maze" />
+      <option name="MAIN_CLASS_NAME" value="uk.gov.dwp.mazeexplorer.maze.MazeTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -339,21 +386,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MazeExplorerTest.shouldCreateExplorerWithSpecificMazeMapWhenStartingGame" />
+        <item itemvalue="JUnit.MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" />
+        <item itemvalue="JUnit.MazeTest" />
         <item itemvalue="JUnit.All in maze" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="JUnit.MazeExplorerTest.shouldInitialiseAMazeWhenInitialising" />
-        <item itemvalue="JUnit.MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" />
-        <item itemvalue="JUnit.MazeExplorerTest" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="MazeTest_shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates - 2019.02.09 at 23h 42m 58s.xml">
-      <configuration name="MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MazeTest_shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates - 2019.02.09 at 23h 46m 17s.xml">
-      <configuration name="MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MazeTest_shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates - 2019.02.09 at 23h 47m 21s.xml">
       <configuration name="MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" configurationId="JUnit" />
     </history-entry>
@@ -378,25 +419,32 @@
     <history-entry file="All_in_maze - 2019.02.10 at 14h 18m 48s.xml">
       <configuration name="All in maze" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MazeTest - 2019.02.10 at 14h 28m 19s.xml">
+      <configuration name="MazeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MazeTest_shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates - 2019.02.10 at 14h 29m 39s.xml">
+      <configuration name="MazeTest.shouldBeAbleToTellWhatKindOfMazeBlockIsOnASpecificCoordinates" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21062271" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21062271" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="CheckStyle" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
-      <window_info active="true" anchor="bottom" id="Version Control" sideWeight="0.4993895" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Version Control" sideWeight="0.4993895" weight="0.32894737" />
       <window_info anchor="bottom" id="Messages" weight="0.32894737" />
       <window_info anchor="bottom" id="Terminal" sideWeight="0.4993895" weight="0.32894737" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50061053" side_tool="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32894737" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -424,7 +472,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java</url>
-          <line>27</line>
+          <line>30</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -434,11 +482,27 @@
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>getClass().getClassLoader().getResource(&quot;mazes/&quot;+SOME_TEMP_FILE)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>getClass().getClassLoader().getResource(SOME_TEMP_FILE)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>Path mazes = Paths.get(getClass().getClassLoader().getResource(&quot;mazes&quot;).toURI());
 Files.list(mazes);</expression-string>
@@ -473,16 +537,6 @@ Files.list(mazes);</expression-string>
       </expression>
       <expression>
         <expression-string>getClass().getClassLoader().getResources(&quot;someValidMaze&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getClass().getClassLoader().getResources(&quot;maze1&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>getClass().getClassLoader().getResources(&quot;maze&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -883,16 +937,6 @@ Files.list(mazes);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="32" column="29" lean-forward="true" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/maze/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="741">
@@ -914,16 +958,6 @@ Files.list(mazes);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -934,27 +968,58 @@ Files.list(mazes);</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/mazes/someMazeTempFile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="18">
+          <caret line="1" column="3" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MazeTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.sdkman/candidates/java/9.0.4-openjdk/lib/src.zip!/java.base/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/maze/MazeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="29" column="86" lean-forward="true" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/mazes/someMazeTempFile">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/gov/dwp/mazeexplorer/MazeExplorerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
+        <state relative-caret-position="385">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MazeTest.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/gov/dwp/mazeexplorer/MazeExplorer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="375">
+          <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1454#1455#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

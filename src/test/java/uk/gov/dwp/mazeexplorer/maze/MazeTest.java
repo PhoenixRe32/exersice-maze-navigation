@@ -23,8 +23,8 @@ import uk.gov.dwp.mazeexplorer.physics.Coordinates;
 
 class MazeTest {
 
-    private static final String SOME_VALID_MAZE = "mazes/someValidMaze";
-    private static final String SOME_TEMP_FILE = "mazes/someMazeTempFile";
+    private static final String SOME_VALID_MAZE = "someValidMaze";
+    private static final String SOME_TEMP_FILE = "someMazeTempFile";
 
     @Test
     void shouldInitialiseAMazeWithDetailsAboutNumberOfWallsAndEmptySpaces() throws URISyntaxException {
