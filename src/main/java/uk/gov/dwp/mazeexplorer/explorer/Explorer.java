@@ -90,8 +90,4 @@ public class Explorer {
     public List<Position> getTrail() {
         return trail;
     }
-
-    public void printTrail() {
-        trail.forEach(System.out::println);
-    }
 }

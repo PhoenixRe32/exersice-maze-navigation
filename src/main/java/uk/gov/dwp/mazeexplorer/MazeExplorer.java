@@ -3,6 +3,7 @@ package uk.gov.dwp.mazeexplorer;
 import static java.nio.file.Files.isRegularFile;
 import static java.util.stream.Collectors.toMap;
 
+import java.io.Console;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -18,14 +19,20 @@ import uk.gov.dwp.mazeexplorer.maze.Maze;
 
 public class MazeExplorer {
 
+    private static final String NEW_LINE = System.getProperty("line.separator");
+
     private static final String MAZES_DIRECTORY = "mazes";
+    
+    private static final String EXIT = "exit";
 
     private final Map<String, Maze> mazes;
+    Map<String, Maze> getMazes() {
+        return mazes;
+    }
 
     private Explorer explorer;
-
-    public Map<String, Maze> getMazes() {
-        return mazes;
+    Explorer getExplorer() {
+        return explorer;
     }
 
     public MazeExplorer() throws URISyntaxException, IOException {
@@ -40,17 +47,48 @@ public class MazeExplorer {
         this.mazes = Collections.unmodifiableMap(mazes);
     }
 
-    public void start(String someValidMaze) {
+    Explorer createExplorer(String someValidMaze) {
         Maze maze = mazes.get(someValidMaze);
         if (maze == null) {
             System.out.println("The maze map doesn't exist. Exiting...");
+            return null;
+        }
+        return new Explorer(maze);
+    }
+
+    public void start() {
+        Console console = System.console();
+        console.format("Welcome to maze explorer.").format(NEW_LINE)
+                .format("You have the following mazes:").format(NEW_LINE);
+        mazes.keySet().forEach(mazeName -> console.format(mazeName).format(NEW_LINE));
+
+        String mazeName = console.readLine("What maze do you want to explore? ");
+
+        Explorer explorer = createExplorer(mazeName);
+        if (this.explorer == null) {
             return;
         }
 
-        this.explorer = new Explorer(maze);
+        loop(explorer);
     }
 
-    public Explorer getExplorer() {
-        return explorer;
+    private void loop(Explorer explorer) {
+        Console console = System.console();
+        String instruction = "";
+        while (!instruction.equalsIgnoreCase(EXIT)) {
+            instruction = console
+                    .format("You are at %s", explorer.getCurrentPosition()).format(NEW_LINE)
+                    .format("You are allowed to:").format(NEW_LINE)
+                    .format("\tStep: step forward").format(NEW_LINE)
+                    .format("\tLeft: turn left").format(NEW_LINE)
+                    .format("\tRight: turn right").format(NEW_LINE)
+                    .format("\tPeek: see what's ahead of you").format(NEW_LINE)
+                    .format("\tCheck: see where you can move").format(NEW_LINE)
+                    .format("\tTrail: print your trail so far").format(NEW_LINE)
+                    .format("\tExit: end it").format(NEW_LINE).format(NEW_LINE)
+                    .readLine("What would you like to do? ")
+                    .toUpperCase();
+            console.format(instruction);
+        }
     }
 }

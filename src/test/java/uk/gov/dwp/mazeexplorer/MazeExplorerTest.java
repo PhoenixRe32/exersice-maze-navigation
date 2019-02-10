@@ -10,12 +10,18 @@ import java.net.URISyntaxException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import uk.gov.dwp.mazeexplorer.explorer.Explorer;
 import uk.gov.dwp.mazeexplorer.physics.Coordinates;
 import uk.gov.dwp.mazeexplorer.physics.Position;
 
 class MazeExplorerTest {
 
     private static final String SOME_VALID_MAZE = "someValidMaze";
+    /* The maze we use.
+        XXXX
+        S  F
+        X XX
+    */
 
     private MazeExplorer mazeExplorer;
 
@@ -31,13 +37,12 @@ class MazeExplorerTest {
 
     @Test
     void shouldCreateExplorerWithSpecificMazeMapWhenStartingGame() {
-        mazeExplorer.start(SOME_VALID_MAZE);
-        assertNotNull(mazeExplorer.getExplorer());
+        assertNotNull(mazeExplorer.createExplorer(SOME_VALID_MAZE));
     }
 
     @Test
     void shouldCreateExplorerAndPlaceHimAtEntranceOfMazeLookingNorth() {
-        mazeExplorer.start(SOME_VALID_MAZE);
-        assertEquals(new Position(new Coordinates(0, 1), NORTH), mazeExplorer.getExplorer().getCurrentPosition());
+        Explorer explorer = mazeExplorer.createExplorer(SOME_VALID_MAZE);
+        assertEquals(new Position(new Coordinates(0, 1), NORTH), explorer.getCurrentPosition());
     }
 }

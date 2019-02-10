@@ -6,5 +6,6 @@ import java.net.URISyntaxException;
 public class Application {
     public static void main(String... arguments) throws IOException, URISyntaxException {
         MazeExplorer mazeExplorer = new MazeExplorer();
+        mazeExplorer.start();
     }
 }
