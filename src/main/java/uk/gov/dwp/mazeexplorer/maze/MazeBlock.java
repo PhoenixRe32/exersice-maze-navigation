@@ -4,13 +4,14 @@ import static java.util.stream.Collectors.toMap;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Predicate;
 
 import uk.gov.dwp.mazeexplorer.maze.exceptions.InvalidMazeBlockRepresentation;
 
 public enum MazeBlock {
     WALL('X'),
     SPACE(' '),
-    ENTRY('S'),
+    ENTRANCE('S'),
     EXIT('F');
 
     private final Character representation;
@@ -34,4 +35,12 @@ public enum MazeBlock {
         }
         return mazeBlock;
     }
+
+    public static Predicate<MazeBlock> isWall = mazeBlock -> mazeBlock == WALL;
+    public static Predicate<MazeBlock> isSpace = mazeBlock -> mazeBlock == SPACE;
+    public static Predicate<MazeBlock> isEntrance = mazeBlock -> mazeBlock == ENTRANCE;
+
+//    public static boolean isWall(MazeBlock mazeBlock){
+//        return mazeBlock == WALL;
+//    }
 }

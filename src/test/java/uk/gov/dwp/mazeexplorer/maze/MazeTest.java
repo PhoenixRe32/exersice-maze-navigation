@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static uk.gov.dwp.mazeexplorer.maze.Maze.createFromFile;
-import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.ENTRY;
+import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.ENTRANCE;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.EXIT;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.SPACE;
 import static uk.gov.dwp.mazeexplorer.maze.MazeBlock.WALL;
@@ -23,17 +23,18 @@ import uk.gov.dwp.mazeexplorer.physics.Coordinates;
 
 class MazeTest {
 
-    private static final String SOME_VALID_MAZE = "someValidMaze";
-    private static final String SOME_TEMP_FILE = "someMazeTempFile";
+    private static final String SOME_VALID_MAZE = "mazes/someValidMaze";
+    private static final String SOME_TEMP_FILE = "mazes/someMazeTempFile";
 
     @Test
-    void shouldInitialiseAMazeWithDetailsAboutNumberOfWallsAndEmptySpaces() throws URISyntaxException {
+    void shouldInitialiseAMazeWithDetailsAboutMaze() throws URISyntaxException {
         URL urlToValidTestMazeFile = Objects.requireNonNull(getClass().getClassLoader().getResource(SOME_VALID_MAZE));
 
         Maze maze = createFromFile(Paths.get(urlToValidTestMazeFile.toURI()));
 
-        assertTrue(maze.getNumberOfWalls() > 0);
-        assertTrue(maze.getNumberOfEmptySpaces() > 0);
+        assertEquals(7,maze.getNumberOfWalls());
+        assertEquals(3, maze.getNumberOfEmptySpaces());
+        assertEquals(new Coordinates(0,1), maze.getEntranceCoordinates());
     }
 
     @Test
@@ -44,7 +45,7 @@ class MazeTest {
 
         Maze maze = createFromFile(tempTestFilePath);
 
-        assertEquals(ENTRY, maze.whatKindOfBlockIsIn(new Coordinates(0, 0)));
+        assertEquals(ENTRANCE, maze.whatKindOfBlockIsIn(new Coordinates(0, 0)));
         assertEquals(SPACE, maze.whatKindOfBlockIsIn(new Coordinates(1, 0)));
         assertEquals(WALL, maze.whatKindOfBlockIsIn(new Coordinates(2, 0)));
         assertEquals(WALL, maze.whatKindOfBlockIsIn(new Coordinates(0, 1)));

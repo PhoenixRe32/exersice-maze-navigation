@@ -12,12 +12,12 @@ what I associate it with. Doesn't mean it could be something else.
 
 ### Assumptions
 
-* The maze files provided are valid if they meet certain requirements. 
+* The map files provided are valid if they meet certain requirements. 
   * They must have one start point. 
   * They must have one exit point.
 
 If the above are met I will assume that they are valid mazes.
-Trivial scenario is a maze with an entry and exit, nothing else.
+Trivial scenario is a map with an entry and exit, nothing else.
 It is simplistic but without any more knowledge and a person to ask for 
 further information and for the purposes of this exercise it will do. 
 
@@ -27,16 +27,16 @@ further information and for the purposes of this exercise it will do.
   The upper left corner is (0,0) and `x` grows positive to the right and
   `y` grows positive to the bottom.
 
-* As one reads the file with the maze, up is `NORTH`, down is `SOUTH`, left is
+* As one reads the file with the map, up is `NORTH`, down is `SOUTH`, left is
   `WEST` and right is `EAST`
  
-* The maze explorer is the interface for the interaction  (between the 
+* The map explorer is the interface for the interaction  (between the 
   game and user).
 
-* The maze explorer contains all the maps included in the game.
+* The map explorer contains all the maps included in the game.
   
-* The explorer and the maze will have a composition relation;
-  Explorer HAS-A maze, the assumption being that the maze object is 
+* The explorer and the map will have a composition relation;
+  Explorer HAS-A map, the assumption being that the map object is 
   basically a map. 
 
 ### How to run tests and solution
